@@ -10,13 +10,14 @@ export class AppComponent {
   title = 'syncfusion-angular-app';
   @ViewChild('exampleRTE')
   public componentObject! : RichTextEditorComponent;
-  
+
   public buttonElement! : HTMLElement | null; 
   public htmlContent! : string;
 
   getFormattedContent(){
     this.buttonElement = document.getElementById('button');
     this.htmlContent = this.componentObject.getHtml();
+    console.log(this.htmlContent)
   }
 
   public customToolbar: Object ={
