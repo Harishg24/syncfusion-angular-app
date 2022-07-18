@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RichTextEditorModule,RichTextEditorAllModule,ToolbarService,LinkService,ImageService,HtmlEditorService,TableService,QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
+import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -11,7 +12,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RichTextEditorModule
+    RichTextEditorModule,
+    DialogModule
   ],
   providers: [ToolbarService,ImageService,HtmlEditorService,LinkService,TableService,QuickToolbarService,RichTextEditorAllModule],
   bootstrap: [AppComponent]

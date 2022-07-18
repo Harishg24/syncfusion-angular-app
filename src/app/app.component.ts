@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
+
 
 @Component({
   selector: 'app-root',
@@ -8,19 +8,16 @@ import { RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor'
 })
 export class AppComponent {
   title = 'syncfusion-angular-app';
-  @ViewChild('exampleRTE')
-  public componentObject! : RichTextEditorComponent;
-
-  public buttonElement! : HTMLElement | null; 
-  public htmlContent! : string;
-
-  getFormattedContent(){
-    this.buttonElement = document.getElementById('button');
-    this.htmlContent = this.componentObject.getHtml();
-    console.log(this.htmlContent)
-  }
-
-  public customToolbar: Object ={
-    items: ['Bold','Italic','Undo','Redo','CreateTable','Image','CreateLink']
-  }
+  public tools: object = {
+    items: ['Undo', 'Redo', '|',
+        'Bold', 'Italic', 'Underline', 'StrikeThrough', '|',
+        'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
+        'SubScript', 'SuperScript', '|',
+        'LowerCase', 'UpperCase', '|',
+        'Formats', 'Alignments', '|', 'OrderedList', 'UnorderedList', '|',
+        'Indent', 'Outdent', '|', 'CreateLink',
+        'Image', '|', 'ClearFormat', 'Print', 'SourceCode', '|', 'FullScreen']
+};
+public iframe: object = { enable: true };
+public height: number = 500;
 }
