@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component} from '@angular/core';
 
 
 @Component({
@@ -17,7 +17,5 @@ export class AppComponent {
         'Formats', 'Alignments', '|', 'OrderedList', 'UnorderedList', '|',
         'Indent', 'Outdent', '|', 'CreateLink',
         'Image', '|', 'ClearFormat', 'Print', 'SourceCode', '|', 'FullScreen']
-};
-public iframe: object = { enable: true };
-public height: number = 500;
+    };
 }
