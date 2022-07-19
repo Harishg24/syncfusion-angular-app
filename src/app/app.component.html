@@ -1,8 +1,9 @@
 <button ej-button id='button' class="e-control e-btn"
 (click)="getFormattedContent()">Get HTML</button>
-
-<ejs-richtexteditor #exampleRTE [toolbarSettings]="customToolbar">
+<ejs-richtexteditor  #exampleRTE [toolbarSettings]="customToolbar" id="rteID"  >
   <ng-template #valueTemplate>
-    <p>Hello World!</p>
+    <div [innerHTML]="user"></div>            
   </ng-template>
 </ejs-richtexteditor>
+<button ejs-button id="btn" cssClass="e-success" (click)="storeData()">Save</button>
+

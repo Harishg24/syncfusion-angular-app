@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent} from '@syncfusion/ej2-angular-richtexteditor';
+import { LocalStorageService } from './local-storage.service';
+
 
 @Component({
   selector: 'app-root',
@@ -8,6 +10,7 @@ import { RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor'
 })
 export class AppComponent {
   title = 'syncfusion-angular-app';
+  constructor( private localStorageService: LocalStorageService) {}
   @ViewChild('exampleRTE')
   public componentObject! : RichTextEditorComponent;
 
@@ -18,6 +21,12 @@ export class AppComponent {
     this.buttonElement = document.getElementById('button');
     this.htmlContent = this.componentObject.getHtml();
     console.log(this.htmlContent)
+  }
+  get user(): any {
+    return localStorage.getItem('Data');
+}
+  storeData(){
+    this.localStorageService.setItem("Data",this.componentObject.getHtml())
   }
 
   public customToolbar: Object ={
